@@ -1,7 +1,7 @@
-// https://youtu.be/rAUn1Lom6dw
 
-document.addEventListener("DOMContentLoaded", () =>
-{
+
+document.addEventListener("DOMContentLoaded", () => {
+
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div'));
     const scoreDisplay = document.querySelector('#score');
@@ -105,7 +105,10 @@ document.addEventListener("DOMContentLoaded", () =>
             moveDown()
         }
     }
+
+    
     document.addEventListener('keyup', control);
+
 
     // movedown
     function moveDown () {
@@ -115,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () =>
         draw();
         freeze();
     }
+
 
     // freeze
     function freeze () {
@@ -132,9 +136,10 @@ document.addEventListener("DOMContentLoaded", () =>
         }
     }
 
+
     // move the tetromino left unless there is a blockage
-    function moveLeft ()
-    {
+    function moveLeft () {
+
         undraw();
         const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0);
 
@@ -142,15 +147,16 @@ document.addEventListener("DOMContentLoaded", () =>
 
         if (current.some(index => squares[currentPosition + index].classList.contains('taken')))
         {
-            currentPosition += 1
+            currentPosition += 1;
         }
 
         draw();
     }
 
+
     // move the tetromino right unless there is a blockage
-    function moveRight ()
-    {
+    function moveRight () {
+
         undraw();
         const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1);
 
@@ -164,19 +170,21 @@ document.addEventListener("DOMContentLoaded", () =>
         draw();
     }
 
+
     // rotate the tetromino
-    function rotate ()
-    {
+    function rotate () {
+
         undraw();
         currentRotation++;
         if (currentRotation === current.length)
         {
-            currentRotation = 0
+            currentRotation = 0;
         }
 
         current = theTetromino[random][currentRotation];
         draw();
     }
+
 
     // show next tetromino
     const displaySquares = document.querySelectorAll('.mini-grid div');
@@ -193,9 +201,10 @@ document.addEventListener("DOMContentLoaded", () =>
         [ 1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1 ] // iTetromino
     ];
 
+
     // display the shape in mini-grid
-    function displayShape ()
-    {
+    function displayShape () {
+
         // remove any trace of a tetromino from the entire grid
         displaySquares.forEach(square => {
             square.classList.remove('tetromino')
@@ -205,8 +214,10 @@ document.addEventListener("DOMContentLoaded", () =>
         });
     }
 
+    
     //add functionality to the button
     startBtn.addEventListener('click', () => {
+
         if (timerId)
         {
             clearInterval(timerId)
@@ -229,4 +240,4 @@ document.addEventListener("DOMContentLoaded", () =>
 
 
 
-})
+}) // document.addEventListener("DOMContentLoaded", () => {
