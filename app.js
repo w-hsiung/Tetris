@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const displayWidth = 4;
     let displayIndex = 0;
     
+    
     //the Tetrominos without rotations
     const upNextTetrominoes =
     [
