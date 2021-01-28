@@ -269,11 +269,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
-                    squares[index].style.borderColor = '';
+                    squares[index].style.backgroundColor = '';
                 })
                 const squaresRemoved = squares.splice(i, width);
                 squares = squaresRemoved.concat(squares);
-                squares.forEach(cell => grid.append(cell));
+                squares.forEach(cell => grid.appendChild(cell));
             }
         }
     }
