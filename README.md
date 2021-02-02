@@ -1,7 +1,7 @@
 Tetris
 ------
 
-This repos is created for learning purposes. It has least value in term of its content.
+This repository is created for learning purposes. It has least value in term of its content.
 
 The following are the main learning points:
 
